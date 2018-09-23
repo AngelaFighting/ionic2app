@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- reorder="true"-->
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of listData;let i=index">
+      <ion-item>
+        <ion-avatar item-left>
+          <img [src]="item?.url">
+        </ion-avatar>
+        {{item?.title}}
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteItem(i)">
+          <ion-icon name="delete">Delete</ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
